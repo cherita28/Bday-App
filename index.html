@@ -1,0 +1,87 @@
+<html>
+<head>
+<title> Bday App </title>
+<style>
+
+*{font-size:50px;}
+body{background-color:#D91C5B; font-family:calibri;}
+.btn{border-radius:30px; width:20%;color:#EA7DA2;}
+
+</style>
+</head>
+
+<body>
+<center>
+<h1> Bday App </h1>
+<form onsubmit="operations()">
+<input type="submit" value="Add" class="btn"/>
+<input type="submit" value="Remove" class="btn"/>
+<input type="submit" value="Show" class="btn"/>
+</form>
+<h2 id="msg"/>
+
+<script>
+let names=["cherita","monica"];
+function operations()
+{
+event.preventDefault();
+let msg=document.getElementById("msg");
+let ele=document.activeElement.value;
+
+if (ele=="Add")
+{
+let n=prompt("Enter the name to be added");
+if(n!="")
+{
+names.push(n);
+msg.innerHTML=names;
+}
+}
+
+else if (ele=="Remove")
+{
+let n=prompt("Enter the name to be removed");
+if(n!="")
+{
+let pos=names.indexOf(n);
+if(pos==-1)
+{
+alert(n+" not found");
+}
+else
+{
+names.splice(pos,1);
+alert(n+" removed");
+}
+msg.innerHTML=names;
+}
+}
+else if(ele=="Show")
+{
+msg.innerHTML=names;
+}
+}
+</script>
+</center>
+
+</center>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
